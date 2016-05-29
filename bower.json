@@ -1,0 +1,20 @@
+{
+  "name": "cv",
+  "version": "0.0.2",
+  "authors": [
+    "christopher.louet"
+  ],
+  "main": "bower.json",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "~1.11",
+    "bootstrap": "~4",
+    "bootstrap-flat": "~3.3",
+    "tether": "~1.1",
+    "font-awesome": "~4.5"
+  }
+}

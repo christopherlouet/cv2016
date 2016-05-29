@@ -1,0 +1,21 @@
+{
+    "name": "cv",
+    "version": "0.0.2",
+    "description": "cv front librairies",
+    "private": true,
+    "dependencies": {
+     	"del": "*",
+        "gulp": "*",
+        "gulp-if": "*",
+        "gulp-rename": "*",
+        "gulp-concat": "*",
+        "gulp-less": "*",
+        "gulp-less-import": "*",
+        "gulp-sourcemaps": "*",
+        "gulp-uglify": "*",
+        "gulp-uglifycss": "*",
+        "gulp-imagemin": "*",
+        "gulp-clean": "*",
+        "imagemin-jpeg-recompress": "*"
+    }
+}
