@@ -17,18 +17,24 @@
 
         {% block stylesheets_global %}
 
+            {% if false == pdf %}
             {% include "common/favicons.html.twig" %}
+            {% endif %}
 
-            <link href="{{ asset('fontawesome/font-awesome.min.css') }}"
+            <link href="{{ prefix }}{{ asset('fontawesome/font-awesome.min.css') }}"
                   rel="stylesheet" type="text/css"/>
-            <link href="{{ asset('css/bootstrap/tether.min.css') }}"
+            <link href="{{ prefix }}{{ asset('css/bootstrap/tether.min.css') }}"
                   rel="stylesheet" type="text/css"/>
-            <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}"
+            <link href="{{ prefix }}{{ asset('css/bootstrap/bootstrap.min.css') }}"
                   rel="stylesheet" type="text/css"/>
-            <link href="{{ asset('css/bootstrap/bootstrap-flat.min.css') }}"
+            <link href="{{ prefix }}{{ asset('css/bootstrap/bootstrap-flat.min.css') }}"
                   rel="stylesheet" type="text/css"/>
-            <link href="{{ asset('bundles/app/css/app.min.css') }}"
+            <link href="{{ prefix }}{{ asset('bundles/app/css/app.min.css') }}"
                   rel="stylesheet" type="text/css"/>
+        {% if pdf %}
+            <link href="{{ prefix }}{{ asset('bundles/app/css/pdf.min.css') }}"
+                  rel="stylesheet" type="text/css"/>
+        {% endif %}
 
         {% endblock stylesheets_global %}
 
@@ -40,35 +46,31 @@
         <div id="wrap" class="bg-light-gray">
 
             {% block menu %}
+                {% if false == pdf %}
                 {% include "common/menu.html.twig" %}
+                {% endif %}
             {% endblock menu %}
 
-            {% block header %}
-            {% endblock header %}
-
-            <div id="content" class="container-fluid">
+            <div id="content" class="container">
                 {% block content %}
                 {% endblock content %}
             </div>
 
-            {% block modal %}
-            {% endblock modal %}
-
         </div>
 
         {% block footer %}
+            {% if false == pdf %}
             {% include "common/footer.html.twig" %}
+            {% endif %}
         {% endblock footer %}
 
         {% block javascripts_global %}
-
             <script type="text/javascript"
-                    src="{{ asset('js/jquery/jquery.min.js') }}"></script>
+                    src="{{ prefix }}{{ asset('js/jquery/jquery.min.js') }}"></script>
             <script type="text/javascript"
-                    src="{{ asset('js/bootstrap/tether.min.js') }}"></script>
+                    src="{{ prefix }}{{ asset('js/bootstrap/tether.min.js') }}"></script>
             <script type="text/javascript"
-                    src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
-
+                    src="{{ prefix }}{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
         {% endblock javascripts_global %}
 
         {% block javascripts %}

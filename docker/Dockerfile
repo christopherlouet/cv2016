@@ -68,4 +68,9 @@ RUN apt-get install -y wget xz-utils && \
 RUN npm install bower -g
 RUN alias bower='bower --allow-root'
 
+RUN ln -s /var/www/docker-symfony/node_modules/gulp/bin/gulp.js /usr/local/bin/gulp
+
+# for wkhtmltopdf dependancies
+sudo apt-get install wkhtmltopdf
+
 WORKDIR /var/www/docker-symfony

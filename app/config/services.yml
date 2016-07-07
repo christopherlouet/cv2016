@@ -1,9 +1,26 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/book/service_container.html
 parameters:
-#    parameter_name: value
+    app.parser.root: datas
+    app.schema.dataset.path: "src/AppBundle/Schema/dataset"
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.menu_builder:
+        class: AppBundle\Menu\MenuBuilder
+        arguments:
+            - "@knp_menu.factory"
+            - "@router"
+        tags:
+            - { name: knp_menu.menu_builder, method: createHomeMenu, alias: home }
+
+    # Parser
+    app.parser.json:
+        class: AppBundle\Parser\JsonParser
+        arguments:
+            - "%app.parser.root%"
+
+    # Schema
+    app.schema:
+        class: AppBundle\Schema\Schema
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@app.parser.json"
+            - "%app.schema.dataset.path%"

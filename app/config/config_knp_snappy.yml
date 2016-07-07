@@ -1,0 +1,14 @@
+# KnpSnappy Configuration
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /var/www/docker-symfony/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64
+        options:
+            viewport-size: 800x600
+            margin-top: 0
+            margin-bottom: 0
+    image:
+        enabled:    true
+        binary:     /var/www/docker-symfony/vendor/h4cc/wkhtmltoimage-amd64/bin/wkhtmltoimage-amd64
+        options:    []
+#    temporary_folder: /var/www/docker-symfony/web/tmp

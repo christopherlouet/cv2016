@@ -1,0 +1,45 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Domaine
+ *
+ * @ORM\Table(name="domaine")
+ * @ORM\Entity
+ */
+class Domaine
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="domaine_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tag", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $tag;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelle", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $libelle;
+
+    /**
+     * @var \AppBundle\Entity\Competence
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Competence", mappedBy="domaine")
+     */
+    private $competences;
+}

@@ -3,9 +3,10 @@
 /web/bundles/
 /web/img/
 /web/css/
-web/fontawesome/
+/web/fontawesome/
 /web/fonts/
 /web/js/
+/web/favicons/
 /app/bootstrap.php.cache
 /app/config/parameters.yml
 /app/phpunit.xml

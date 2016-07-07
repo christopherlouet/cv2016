@@ -5,3 +5,24 @@ base:
 footer:
     copyright: Copyright
     contact: christopher.louet@gmail.com
+
+menu:
+    profile: Profil
+    experience: Expériences
+    expertise: Compétences
+    education: Formations
+    contact: Me contacter
+
+profil:
+    pdf: Télécharger en PDF
+    github: Voir sur GitHub
+    github_adresse: https://github.com/christopherlouet/mycv
+
+experience:
+    title: Expériences
+
+formation:
+    title: Formations
+
+competence:
+    title: Compétences

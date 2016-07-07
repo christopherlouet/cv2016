@@ -15,8 +15,8 @@ var path_js = {
 };
 
 var path_less = {
-    app: appDir+'/less/app/*.less',
-    common: appDir+'/less/common/*.less'
+    common: appDir+'/less/common/*.less',
+    pdf: appDir+'/less/pdf/*.less'
 };
 
 var path_media = {
@@ -69,15 +69,16 @@ module.exports = {
 
     buildCSS: function (gulp)
     {
-        gulp.src(path.less.app)
+        gulp.src(path.less.common)
             .pipe(less())
+            .pipe(concat('app.css'))
             .pipe(rename({suffix: '.min'}))
             .pipe(uglifycss())
             .pipe(gulp.dest(path.dest.css));
 
-        gulp.src(path.less.common)
+        gulp.src(path.less.pdf)
             .pipe(less())
-            .pipe(concat('app.css'))
+            .pipe(concat('pdf.css'))
             .pipe(rename({suffix: '.min'}))
             .pipe(uglifycss())
             .pipe(gulp.dest(path.dest.css));

@@ -1,0 +1,122 @@
+{"datas":[
+  {
+    "tag":"conception",
+    "libelle":"Conception / Tests",
+    "competences": [
+      {
+        "libelle": "Tests fonctionnels",
+        "niveau": "80"
+      },
+      {
+        "libelle": "Tests unitaires",
+        "niveau": "80"
+      },
+      {
+        "libelle": "Maquettage",
+        "niveau": "80"
+      },
+      {
+        "libelle": "UML",
+        "niveau": "80"
+      },
+      {
+        "libelle": "Merise",
+        "niveau": "70"
+      },
+      {
+        "libelle": "Méthode Agile",
+        "niveau": "60"
+      }
+    ]
+  },
+  {
+    "tag":"developpement",
+    "libelle":"Développement",
+    "competences": [
+      {
+        "libelle": "Symfony 2.8/3",
+        "niveau": "90"
+      },
+      {
+        "libelle": "PHP 5.6/7",
+        "niveau": "80"
+      },
+      {
+        "libelle": "NGINX 1.9 / Apache 2",
+        "niveau": "80"
+      },
+      {
+        "libelle": "Jquery 1.11 / Ajax",
+        "niveau": "80"
+      },
+      {
+        "libelle": "Android (Java)",
+        "niveau": "70"
+      },
+      {
+        "libelle": "LESS / CSS3",
+        "niveau": "70"
+      }
+    ]
+  },
+  {
+    "tag":"orm_bdd",
+    "libelle":"ORM/BDD",
+    "competences": [
+      {
+        "libelle": "Doctrine 2.5",
+        "niveau": "90"
+      },
+      {
+        "libelle": "PostgreSQL 9.5",
+        "niveau": "80"
+      },
+      {
+        "libelle": "MySQL 5.6/MariaDB",
+        "niveau": "70"
+      },
+      {
+        "libelle": "Oracle",
+        "niveau": "60"
+      },
+      {
+        "libelle": "Sybase",
+        "niveau": "60"
+      },
+      {
+        "libelle": "Hibernate",
+        "niveau": "50"
+      }
+    ]
+  },
+  {
+    "tag":"autres",
+    "libelle":"Autres",
+    "competences": [
+      {
+        "libelle": "Linux Debian",
+        "niveau": "90"
+      },
+      {
+        "libelle": "Docker 1.11",
+        "niveau": "90"
+      },
+      {
+        "libelle": "Git",
+        "niveau": "90"
+      },
+      {
+        "libelle": "Bootstrap 3/4",
+        "niveau": "90"
+      },
+      {
+        "libelle": "Bower/Gulp",
+        "niveau": "80"
+      },
+      {
+        "libelle": "Anglais",
+        "niveau": "70"
+      }
+    ]
+  }
+]}

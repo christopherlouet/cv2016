@@ -1,0 +1,38 @@
+{"datas":[
+  {
+    "tag":"imie_cpcsi",
+    "ecole":"<b><a target='_blank' href=\"http://imie-ecole-informatique.fr/formations/chef-de-projet-numerique.html\">IMIE Rennes</a></b>",
+    "debut": "Septembre 2015",
+    "fin": "Septembre 2016",
+    "intitule": "Chef de Projet Numérique",
+    "validation": "Titre professionnel niveau I<br> <b>Chef de Projet en Conception de Systèmes Informatiques</b>",
+    "niveau": "BAC +5"
+  },
+  {
+    "tag":"imie",
+    "ecole":"<b><a target='_blank' href=\"http://www.imie-ecole-informatique.fr/formations/concepteur-developpeur-en-projets-numeriques.html\">IMIE Rennes</a></b>",
+    "debut": "Septembre 2013",
+    "fin": "Septembre 2015",
+    "intitule": "Concepteur développeur en projets numériques",
+    "validation": "Titre professionnel niveau II<br> <b>Concepteur Développeur Informatique</b>",
+    "niveau": "BAC +4"
+  },
+  {
+    "tag":"iut_lannion",
+    "ecole":"<b><a target='_blank' href=\"http://www.iut-lannion.fr/lyceens-etudiants/choisir-un-dut/dut-informatique\" >IUT Lannion</a></b>",
+    "debut": "Septembre 2005",
+    "fin": "Août 2007",
+    "intitule": "DUT Informatique",
+    "validation": "Titre professionnel niveau III",
+    "niveau": "BAC +2"
+  },
+  {
+    "tag":"lycee",
+    "ecole":"<b>Lycée Colbert de Lorient</b>",
+    "debut": "Septembre 2004",
+    "fin": "Août 2005",
+    "intitule": "Baccalauréat Scientifique spécialité SI",
+    "validation": "",
+    "niveau": "BAC"
+  }
+]}

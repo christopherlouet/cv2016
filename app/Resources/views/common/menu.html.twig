@@ -1,0 +1,29 @@
+{% trans_default_domain 'AppBundle' %}
+
+{% set knp_menu_params = {
+'currentClass': 'active',
+'template': 'menu/knp_menu.html.twig'
+} %}
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+
+    <button class="navbar-toggler hidden-sm-up" type="button"
+            data-toggle="collapse" data-target="#menu_home">
+        &#9776;
+    </button>
+
+    <div class="container-fluid">
+        <div class="collapse navbar-toggleable-xs" id="menu_home">
+
+            {{ knp_menu_render('home', knp_menu_params) }}
+
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#">
+                        Christopher LOUËT - Développeur Web
+                    </a>
+                </li>
+            </ul>
+         </div>
+    </div>
+</nav>

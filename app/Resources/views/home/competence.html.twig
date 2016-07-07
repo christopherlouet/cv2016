@@ -1,0 +1,31 @@
+{% trans_default_domain 'AppBundle' %}
+
+<ul class="list-group" id="competence">
+	<li class="list-group-item text-xs-center list-group-item-title">
+		<h1>{{ 'competence.title'|trans }}</h1>
+	</li>
+</ul>
+
+<div class="row">
+	{% for domaine in domaines %}
+		<div class="{% if false == pdf %}col-xs-12{% endif %} col-lg-3">
+			<ul class="list-group">
+
+				<li class="list-group-item text-xs-center list-group-item-title">
+					<b>{{ domaine.libelle|raw }}</b>
+				</li>
+
+				{% for competence in domaine.competences %}
+					<li class="list-group-item text-xs-center">
+						<p><b>{{ competence.libelle|raw }}</b></p>
+						<progress class="progress progress-striped progress-success" value="{{ competence.niveau }}" max="100">
+							<div class="progress progress-striped progress-success">
+								<span class="progress-bar" style="width: {{ competence.niveau }}%;">{{ competence.niveau }}%</span>
+							</div>
+						</progress>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endfor %}
+</div>

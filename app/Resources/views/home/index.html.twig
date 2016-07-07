@@ -1,13 +1,9 @@
 {% extends 'base.html.twig' %}
 {% trans_default_domain 'AppBundle' %}
 
-{% block stylesheets %}
-    <link href="{{ asset('bundles/app/css/home.min.css') }}"
-          rel="stylesheet" type="text/css"/>
-{% endblock stylesheets %}
-
 {% block content %}
-
-    test
-
+    {% include 'home/profil.html.twig' %}
+    {% include 'home/experience.html.twig' %}
+    {% include 'home/competence.html.twig' %}
+    {% include 'home/formation.html.twig' %}
 {% endblock %}

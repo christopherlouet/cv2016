@@ -1,0 +1,80 @@
+{"datas":[
+  {
+    "tag":"fluditec",
+    "poste":"Développeur Web",
+    "entreprise": "Fluditec",
+    "debut": "Octobre 2015",
+    "fin": "Aujourd'hui",
+    "activites": [
+      {
+        "libelle": "<b>Analyse, conception, développement et maintenance</b> de la plateforme numérique du bâtiment."
+      },
+      {
+        "libelle": "<b>Déploiement</b> de l'application sur serveurs dédiés."
+      },
+      {
+        "libelle": "<b>Fort de proposition</b> pour les outils de développements et de déploiements."
+      }
+    ]
+  },
+  {
+    "tag":"mutualia",
+    "poste":"Développeur Web",
+    "entreprise": "Union Nationale Mutualia",
+    "debut": "Mars 2014",
+    "fin": "Septembre 2015",
+    "activites": [
+      {
+        "libelle": "<b>Développement et maintenance</b> d'applications web intranet pour le réseau Mutualia."
+      },
+      {
+        "libelle": "<b>Développement</b> de l'application web <a href=\"http://www.mutualia.fr\">www.mutualia.fr</a>."
+      },
+      {
+        "libelle": "<b>Réalisation</b> de spécifications fonctionnelles."
+      }
+    ]
+  },
+  {
+    "tag":"everial",
+    "poste":"Développeur",
+    "entreprise": "Everial BCS Rennes",
+    "debut": "Septembre 2008",
+    "fin": "Août 2013",
+    "activites": [
+      {
+        "libelle": "<b>Développement et maintenance</b> du produit Dialog, logiciel spécialisé dans la gestion d'abonnement et de distrubution de la presse quotidienne régionale et nationale."
+      },
+      {
+        "libelle": "<b>Développement</b> de scripts php pour automatisation des traitements lourds."
+      },
+      {
+        "libelle": "<b>Réalisation</b> de spécifications fonctionnelles."
+      }
+    ]
+  },
+  {
+    "tag":"caisse_depots",
+    "poste":"Stage analyste développeur",
+    "entreprise": "Caisse des dépôts",
+    "debut": "Janvier 2008",
+    "fin": "Juin 2008",
+    "activites": [
+      {
+        "libelle": "<b>Etude et développement</b> d'une application de gestion de la relation client."
+      }
+    ]
+  },
+  {
+    "tag":"armb",
+    "poste":"Stage analyste développeur",
+    "entreprise": "ARMB",
+    "debut": "Avril  2007",
+    "fin": "Juin 2007",
+    "activites": [
+      {
+        "libelle": "<b>Etude et développement</b> d'une application de gestion d'une phonothèque."
+      }
+    ]
+  }
+]}
