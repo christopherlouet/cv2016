@@ -12,7 +12,6 @@
 /app/phpunit.xml
 /build/
 /vendor/
-/bin/
 /var/
 /node_modules/
 /composer.phar
