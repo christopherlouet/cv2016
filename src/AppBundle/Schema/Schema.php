@@ -35,6 +35,7 @@ class Schema
 
     public function cleanAll()
     {
+        $this->cleanProfil();
         $this->cleanCompetence();
         $this->cleanExperience();
         $this->cleanFormation();
@@ -42,6 +43,7 @@ class Schema
 
     public function updateAll()
     {
+        $this->updateProfil();
         $this->updateCompetence();
         $this->updateExperience();
         $this->updateFormation();
