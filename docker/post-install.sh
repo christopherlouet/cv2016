@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "running post install scripts"
-
 cd /var/www/docker-symfony
 npm install
 rm -rf /usr/local/bin/bower

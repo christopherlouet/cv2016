@@ -1,19 +1,19 @@
 {% trans_default_domain 'AppBundle' %}
 
 <div class="row" id="profil">
-        <div class="{% if false == pdf %}col-xs-6{% endif %} col-lg-2 text-xs-center">
-            <a href="{{ path('index') }}">
-                {% if pdf %}
-                    <img class="img-thumbnail" id="logo"
-                         src="{{ prefix }}{{ asset('bundles/app/img/logo.png') }}"
-                         style="width: 92px; height: 82px">
-                {% else %}
+    <div class="{% if false == pdf %}col-xs-6{% endif %} col-lg-3 text-xs-center">
+        <a href="{{ path('index') }}">
+            {% if pdf %}
                 <img class="img-thumbnail" id="logo"
                      src="{{ prefix }}{{ asset('bundles/app/img/logo.png') }}"
-                     style="width: 160px; height: 150px; margin-top: 10px;margin-left: 10px;">
-                {% endif %}
-            </a>
-        </div>
+                     style="width: 92px; height: 82px">
+            {% else %}
+            <img class="img-thumbnail" id="logo"
+                 src="{{ prefix }}{{ asset('bundles/app/img/logo.png') }}"
+                 style="width: 160px; height: 150px; margin-top: 10px;margin-left: 10px;">
+            {% endif %}
+        </a>
+    </div>
     <div class="{% if false == pdf %}col-xs-6{% endif %} col-lg-3">
         <ul class="list-group">
             <li class="list-group-item text-xs-center list-group-item-title">
@@ -27,33 +27,35 @@
             </li>
         </ul>
     </div>
-    <div class="{% if false == pdf %}col-xs-12{% endif %} col-lg-4">
-        <ul class="list-group">
-            <li class="list-group-item text-xs-center list-group-item-title">
-                <b>Adresse</b>
-            </li>
-            <li class="list-group-item">
-                {{ profil.adresse }}<br>
-                {{ profil.codePostal }} {{ profil.ville }}<br>
-                <i class="fa fa-phone-square"></i>&nbsp;
-                {{ profil.telephone }}<br>
-                <i class="fa fa-envelope"></i>&nbsp;
-                <a href="mailto:{{ profil.email }}">{{ profil.email }}</a>
-            </li>
-        </ul>
-    </div>
+    {##}
+    {#<div class="{% if false == pdf %}col-xs-12{% endif %} col-lg-4">#}
+        {#<ul class="list-group">#}
+            {#<li class="list-group-item text-xs-center list-group-item-title">#}
+                {#<b>Adresse</b>#}
+            {#</li>#}
+            {#<li class="list-group-item">#}
+                {#{{ profil.adresse }}<br>#}
+                {#{{ profil.codePostal }} {{ profil.ville }}<br>#}
+                {#<i class="fa fa-phone-square"></i>&nbsp;#}
+                {#{{ profil.telephone }}<br>#}
+                {#<i class="fa fa-envelope"></i>&nbsp;#}
+                {#<a href="mailto:{{ profil.email }}">{{ profil.email }}</a>#}
+            {#</li>#}
+        {#</ul>#}
+    {#</div>#}
+
     {% if false == pdf %}
     <div class="col-xs-12 col-lg-3">
         <ul class="list-group">
             <li class="list-group-item text-xs-center list-group-item-title">
                 <b>Contact</b>
             </li>
-            <div class="list-group-item">
-                <i class="fa fa-file-pdf-o fa-2x"></i>
-                <a href="{{ path('index_pdf') }}" target="_blank">
-                    &nbsp;&nbsp;{{ 'profil.pdf'|trans }}
-                </a>
-            </div>
+            {#<div class="list-group-item">#}
+                {#<i class="fa fa-file-pdf-o fa-2x"></i>#}
+                {#<a href="{{ path('index_pdf') }}" target="_blank">#}
+                    {#&nbsp;&nbsp;{{ 'profil.pdf'|trans }}#}
+                {#</a>#}
+            {#</div>#}
             <div class="list-group-item">
                 <i class="fa fa-github fa-2x"></i>
                 <a href="{{ 'profil.github_adresse'|trans }}">
