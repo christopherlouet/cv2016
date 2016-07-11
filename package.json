@@ -5,6 +5,7 @@
     "private": true,
     "dependencies": {
      	"del": "*",
+        "bower": "*",
         "gulp": "*",
         "gulp-if": "*",
         "gulp-rename": "*",

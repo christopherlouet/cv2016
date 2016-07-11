@@ -1,5 +1,8 @@
 FROM php:5.6-fpm
 
+ENV WWW /var/www/docker-symfony
+WORKDIR ${WWW}
+
 RUN apt-get update
 
 # git
@@ -64,13 +67,5 @@ RUN apt-get install -y wget xz-utils && \
     ln -s /opt/node/bin/npm /usr/local/bin/npm && \
     npm install -g npm
 
-# for wkhtmltopdf dependancies
-#sudo apt-get install wkhtmltopdf
-
-RUN npm install
-RUN ln -s /var/www/docker-symfony/node_modules/gulp/bin/gulp.js /usr/local/bin/gulp
-RUN ln -s /opt/node/lib/node_modules/bower/bin/bower /usr/local/bin/bower
-RUN alias bower='bower --allow-root'
-RUN bower update
-
-WORKDIR /var/www/docker-symfony
+# install wkhtmltopdf
+RUN apt-get install -y wkhtmltopdf
