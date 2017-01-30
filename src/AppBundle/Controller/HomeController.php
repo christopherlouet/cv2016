@@ -2,10 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Domaine;
-use AppBundle\Entity\Experience;
-use AppBundle\Entity\Formation;
-use AppBundle\Entity\Profil;
+use AppBundle\Manager\CVManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +16,6 @@ class HomeController extends Controller
     {
         $twig = 'home/index.html.twig';
         $paramTwig = $this->getParamTwig(false);
-
 
         return $this->render ( $twig, $paramTwig );
     }
@@ -49,19 +45,15 @@ class HomeController extends Controller
      */
     private function getParamTwig($pdf)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $profil = current($em->getRepository(Profil::class)->findAll());
-        $domaines = $em->getRepository(Domaine::class)->findAll();
-        $experiences = $em->getRepository(Experience::class)->findAll();
-        $formations = $em->getRepository(Formation::class)->findAll();
+        /** @var CVManager $manager */
+        $manager = $this->get('app.manager');
         $prefix = $this->getPrefix($pdf);
 
         $paramTwig = array (
-            'profil' => $profil,
-            'domaines' => $domaines,
-            'experiences' => $experiences,
-            'formations' => $formations,
+            'profil' => $manager->getProfil(),
+            'domaines' => $manager->getDomaines(),
+            'experiences' => $manager->getExperiences(),
+            'formations' => $manager->getFormations(),
             'pdf' => $pdf,
             'prefix' => $prefix,
         );

@@ -113,6 +113,7 @@ if ! shopt -oq posix; then
 fi
 
 alias php="gosu php php"
+alias console="gosu php bin/console"
 
 if [ -f ~/.bash_info ]; then
     . ~/.bash_info

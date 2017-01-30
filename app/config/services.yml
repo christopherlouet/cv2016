@@ -24,3 +24,9 @@ services:
             - "@doctrine.orm.entity_manager"
             - "@app.parser.json"
             - "%app.schema.dataset.path%"
+
+    # Manager
+    app.manager:
+        class: AppBundle\Manager\CVManager
+        arguments:
+            - "@doctrine.orm.entity_manager"

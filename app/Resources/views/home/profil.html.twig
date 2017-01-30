@@ -20,10 +20,12 @@
                 <b>Profil</b>
             </li>
             <li class="list-group-item">
+                {% if profil is not null %}
                 {{ profil.prenom }} {{ profil.nom }}<br>
                 {{ profil.age }}<br>
                 {{ profil.permis }}<br>
                 {{ profil.statut }}
+                {% endif %}
             </li>
         </ul>
     </div>
