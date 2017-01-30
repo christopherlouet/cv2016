@@ -20,3 +20,4 @@
 .settings
 .project
 .idea
+/docker/prod/docker-compose.yml

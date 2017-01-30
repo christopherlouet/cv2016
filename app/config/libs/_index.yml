@@ -1,0 +1,8 @@
+imports:
+    - { resource: doctrine.yml }
+    - { resource: fosjsrouting.yml }
+    - { resource: fosuser.yml }
+    - { resource: knpmenu.yml }
+    - { resource: knpsnappy.yml }
+    - { resource: snc_redis.yml }
+    - { resource: swiftmailer.yml }

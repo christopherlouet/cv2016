@@ -1,0 +1,51 @@
+version: '2'
+services:
+  php:
+    build:
+      context: ./docker/dev/php
+      args:
+        UID: 1000
+        GID: 1000
+        USERNAME: php
+        GROUPNAME: php
+    links:
+      - db
+      - redis
+    volumes:
+      - .:/var/www/docker-symfony
+      - ./docker/dev/conf/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
+      - ./docker/dev/conf/opcache-recommended.ini:/usr/local/etc/php/conf.d/opcache-recommended.ini:ro
+      - ./docker/dev/conf/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:ro
+      - ./docker/dev/bash/.bashrc:/root/.bashrc
+      - ./docker/dev/bash/.bash_prompt:/root/.bash_prompt
+    environment:
+      XDEBUG_CONFIG: remote_host=172.17.0.1
+      PHP_IDE_CONFIG: serverName=cv
+  nginx:
+    image: nginx:1.9.10
+    links:
+      - php
+    volumes_from:
+      - php
+    volumes:
+      - ./docker/dev/conf/vhost.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+  db:
+    image: postgres:9.5
+    ports:
+      - "5432:5432"
+    volumes:
+      - /srv/postgresql/data:/var/lib/postgresql/data
+      - ./var/logs/postgres:/var/log/postgresql
+      - ./var/dump:/var/dump
+    environment:
+      POSTGRES_USER: pg_user
+      POSTGRES_PASSWORD: cvchristopher
+      POSTGRES_DB: cv
+  redis:
+    image: redis:3.2
+    ports:
+      - "6379:6379"
+    volumes:
+      - /srv/redis/data:/data

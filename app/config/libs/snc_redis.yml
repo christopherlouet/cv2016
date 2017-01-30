@@ -1,0 +1,23 @@
+snc_redis:
+    # configure predis as client
+    clients:
+        default:
+            type: predis
+            alias: default
+            dsn: redis://redis
+        doctrine:
+            type: predis
+            alias: doctrine
+            dsn: redis://redis
+    # configure doctrine caching
+    doctrine:
+        metadata_cache:
+            client: doctrine
+            entity_manager: [default,dpe]
+            document_manager: default
+        result_cache:
+            client: doctrine
+            entity_manager: [default,dpe]
+        query_cache:
+            client: doctrine
+            entity_manager: [default,dpe]
