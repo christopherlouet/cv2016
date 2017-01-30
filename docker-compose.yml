@@ -36,7 +36,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - /srv/postgresql/data:/var/lib/postgresql/data
+      - /srv/postgresql/cv/data:/var/lib/postgresql/data
       - ./var/logs/postgres:/var/log/postgresql
       - ./var/dump:/var/dump
     environment:
@@ -48,4 +48,4 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - /srv/redis/data:/data
+      - /srv/redis/cv/data:/data

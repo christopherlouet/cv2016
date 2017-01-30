@@ -1,9 +1,19 @@
 {
     "name": "cv",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "description": "cv front librairies",
     "private": true,
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {},
+    "author": "Christopher LOUËT",
+    "license": "ISC",
     "dependencies": {
+        "bootstrap": "^4.0.0-alpha.5",
      	"del": "*",
         "bower": "*",
         "gulp": "*",
@@ -17,6 +27,7 @@
         "gulp-uglifycss": "*",
         "gulp-imagemin": "*",
         "gulp-clean": "*",
-        "imagemin-jpeg-recompress": "*"
+        "imagemin-jpeg-recompress": "*",
+        "jquery": "^3.1.1"
     }
 }
