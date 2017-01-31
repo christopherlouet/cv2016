@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        $twig = 'home/index.html.twig';
+        $twig = 'index.html.twig';
         $paramTwig = $this->getParamTwig(false);
 
         return $this->render ( $twig, $paramTwig );
@@ -25,10 +25,10 @@ class HomeController extends Controller
      */
     public function indexPdfAction()
     {
-        $twig = 'home/index.html.twig';
+        $twig = 'index_pdf.html.twig';
         $paramTwig = $this->getParamTwig(true);
-
         $html = $this->renderView($twig, $paramTwig);
+
         return new Response(
             $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
             200,
@@ -54,7 +54,6 @@ class HomeController extends Controller
             'domaines' => $manager->getDomaines(),
             'experiences' => $manager->getExperiences(),
             'formations' => $manager->getFormations(),
-            'pdf' => $pdf,
             'prefix' => $prefix,
         );
 
@@ -77,14 +76,12 @@ class HomeController extends Controller
         switch ($environment)
         {
             case 'dev':
-                if ($pdf) {
+                if ($pdf)
                     $prefix = $scheme . '://172.17.0.1';
-                }
                 break;
             case 'prod':
-                if ($pdf) {
+                if ($pdf)
                     $prefix = $scheme . '\'://\'' . $host;
-                }
                 break;
             default:
                 $prefix = null;

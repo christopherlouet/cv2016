@@ -17,8 +17,6 @@
 
         {% block stylesheets_global %}
 
-            {% include "common/favicons.html.twig" %}
-
             <link href="{{ prefix }}{{ asset('fontawesome/font-awesome.min.css') }}"
                   rel="stylesheet" type="text/css"/>
             <link href="{{ prefix }}{{ asset('css/bootstrap/tether.min.css') }}"
@@ -28,6 +26,8 @@
             <link href="{{ prefix }}{{ asset('css/bootstrap/bootstrap-flat.min.css') }}"
                   rel="stylesheet" type="text/css"/>
             <link href="{{ prefix }}{{ asset('bundles/app/css/app.min.css') }}"
+                  rel="stylesheet" type="text/css"/>
+            <link href="{{ prefix }}{{ asset('bundles/app/css/pdf.min.css') }}"
                   rel="stylesheet" type="text/css"/>
 
         {% endblock stylesheets_global %}
@@ -40,7 +40,6 @@
         <div id="wrap" class="bg-light-gray">
 
             {% block menu %}
-                {% include "common/menu.html.twig" %}
             {% endblock menu %}
 
             <div id="content" class="container">
@@ -51,7 +50,6 @@
         </div>
 
         {% block footer %}
-            {% include "common/footer.html.twig" %}
         {% endblock footer %}
 
         {% block javascripts_global %}
