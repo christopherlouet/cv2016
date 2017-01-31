@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
         libicu-dev \
         libpq-dev \
         libbz2-dev \
-        git \
     && docker-php-ext-install -j$(nproc) iconv intl mcrypt opcache pdo_pgsql mbstring bz2 json zip exif \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
@@ -28,15 +27,17 @@ RUN apt-get update && apt-get install -y \
 #    && pecl install memcached \
 #    && docker-php-ext-enable memcached
 
-# debug
+############################
+# Debug          #
+############################
+
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 ############################
-# Tools                    #
+# Gosu                     #
 ############################
 
-# install gosu
 ENV GOSU_VERSION 1.9
 RUN set -x \
     && apt-get update && apt-get install -y --no-install-recommends ca-certificates wget && rm -rf /var/lib/apt/lists/* \
@@ -50,6 +51,15 @@ RUN set -x \
     && chmod +x /usr/local/bin/gosu \
     && gosu nobody true \
     && apt-get purge -y --auto-remove ca-certificates wget
+
+############################
+# wkhtmltopdf libraries    #
+############################
+
+RUN apt-get update && apt-get install -y \
+        libfontconfig \
+        libxext6 \
+        libxrender-dev
 
 ############################
 # Local User               #
