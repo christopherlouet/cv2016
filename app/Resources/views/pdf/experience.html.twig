@@ -1,14 +1,18 @@
 {% trans_default_domain 'AppBundle' %}
 
-<ul class="list-group" id="experience">
-    <li class="list-group-item text-xs-center list-group-item-title">
-        <h1>{{ 'experience.title'|trans }}</h1>
-    </li>
-</ul>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item text-xs-center list-group-item-main">
+                <h1>{{ 'experience.title'|trans }}</h1>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
     {% for experience in experiences %}
-    <div class="col-lg-3">
+    <div class="col-sm-6">
         <ul class="list-group">
 
             <li class="list-group-item text-xs-center list-group-item-title">

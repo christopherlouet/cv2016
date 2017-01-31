@@ -1,26 +1,27 @@
 {% trans_default_domain 'AppBundle' %}
 
 <div class="row" id="profil">
-    <div class="col-lg-3 text-xs-center">
-        <a href="{{ path('index') }}">
-            <img class="img-thumbnail" id="logo"
-                 src="{{ prefix }}{{ asset('bundles/app/img/logo.png') }}"
-                 style="width: 92px; height: 82px">
-        </a>
-    </div>
-    <div class="col-lg-3">
+    <div class="col-sm-3">
         <ul class="list-group">
             <li class="list-group-item text-xs-center list-group-item-title">
                 <b>Profil</b>
             </li>
             <li class="list-group-item">
                 {% if profil is not null %}
-                {{ profil.prenom }} {{ profil.nom }}<br>
-                {{ profil.age }}<br>
-                {{ profil.permis }}<br>
-                {{ profil.statut }}
+                    {{ profil.prenom }} {{ profil.nom }}<br>
+                    {{ profil.age }}<br>
+                    {{ profil.permis }}<br>
+                    {{ profil.statut }}
                 {% endif %}
             </li>
         </ul>
     </div>
+    <div class="col-sm-offset-6 col-sm-3 text-xs-center">
+        <a href="{{ path('index') }}">
+            <img class="img-thumbnail" id="logo"
+                 src="{{ prefix }}{{ asset('bundles/app/img/logo.png') }}"
+                 style="width: 92px; height: 82px">
+        </a>
+    </div>
+
 </div>

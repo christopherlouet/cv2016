@@ -7,6 +7,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class HomeController.
+ * @package AppBundle\Controller
+ */
 class HomeController extends Controller
 {
     /**
@@ -37,6 +41,17 @@ class HomeController extends Controller
                 'Content-Disposition'   => 'attachment; filename="cv.pdf"'
             )
         );
+    }
+
+    /**
+     * @Route("/pdf_html", name="index_pdf_html")
+     */
+    public function indexPdfHtmlAction()
+    {
+        $twig = 'index_pdf.html.twig';
+        $paramTwig = $this->getParamTwig(true);
+
+        return $this->render ( $twig, $paramTwig );
     }
 
     /**
