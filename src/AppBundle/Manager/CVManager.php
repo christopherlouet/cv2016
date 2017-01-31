@@ -39,7 +39,7 @@ class CVManager
         $repository = $this->em->getRepository(Profil::class);
         $data = $repository->findAll();
         if (count($data)>0)
-            $profil = $data;
+            $profil = $data[0];
 
         return $profil;
     }
