@@ -1,35 +1,78 @@
 {% trans_default_domain 'AppBundle' %}
 
-<div class="row">
-	<div class="col-xs-12">
-		<ul class="list-group">
-			<li class="list-group-item text-xs-center list-group-item-main">
-				<h1>{{ 'competence.title'|trans }}</h1>
-			</li>
-		</ul>
+{% set nbColums = 4 %}
+
+<div class="card">
+
+	<h5 class="card-header text-sm-center">
+        {{ 'competence.title'|trans }}
+	</h5>
+
+	<div class="card-block">
+        {% for domaine in domaines %}
+
+            {% if (loop.index % nbColums == 1) %}
+				<div class="row">
+            {% endif %}
+
+			<div class="col-sm-{{ 12/nbColums }}">
+				<div class="card">
+					<div class="card-header font-weight-bold text-sm-center">
+						{{ domaine.libelle|raw }}
+					</div>
+					<ul class="list-group list-group-flush">
+                        {% for competence in domaine.competences %}
+							<li class="list-group-item">
+								<p class="font-weight-bold text-sm-center">{{ competence.libelle|raw }}</p>
+								<progress class="progress progress-striped progress-success" value="{{ competence.niveau }}" max="100">
+									<div class="progress progress-striped progress-success">
+										<span class="progress-bar" style="width: {{ competence.niveau }}%;">{{ competence.niveau }}%</span>
+									</div>
+								</progress>
+							</li>
+                        {% endfor %}
+					</ul>
+				</div>
+			</div>
+
+            {% if (loop.index % nbColums == 0) %}
+				</div>
+            {% endif %}
+
+        {% endfor %}
 	</div>
 </div>
 
-<div class="row">
-	{% for domaine in domaines %}
-		<div class="col-sm-6">
-			<ul class="list-group">
+{#<div class="row">#}
+	{#<div class="col-xs-12">#}
+		{#<ul class="list-group">#}
+			{#<li class="list-group-item text-xs-center list-group-item-main">#}
+				{#<h1>{{ 'competence.title'|trans }}</h1>#}
+			{#</li>#}
+		{#</ul>#}
+	{#</div>#}
+{#</div>#}
 
-				<li class="list-group-item text-xs-center list-group-item-title">
-					<b>{{ domaine.libelle|raw }}</b>
-				</li>
+{#<div class="row">#}
+	{#{% for domaine in domaines %}#}
+		{#<div class="col-sm-6">#}
+			{#<ul class="list-group">#}
 
-				{% for competence in domaine.competences %}
-					<li class="list-group-item text-xs-center">
-						<p><b>{{ competence.libelle|raw }}</b></p>
-						<progress class="progress progress-striped progress-success" value="{{ competence.niveau }}" max="100">
-							<div class="progress progress-striped progress-success">
-								<span class="progress-bar" style="width: {{ competence.niveau }}%;">{{ competence.niveau }}%</span>
-							</div>
-						</progress>
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
-	{% endfor %}
-</div>
+				{#<li class="list-group-item text-xs-center list-group-item-title">#}
+					{#<b>{{ domaine.libelle|raw }}</b>#}
+				{#</li>#}
+
+				{#{% for competence in domaine.competences %}#}
+					{#<li class="list-group-item text-xs-center">#}
+						{#<p><b>{{ competence.libelle|raw }}</b></p>#}
+						{#<progress class="progress progress-striped progress-success" value="{{ competence.niveau }}" max="100">#}
+							{#<div class="progress progress-striped progress-success">#}
+								{#<span class="progress-bar" style="width: {{ competence.niveau }}%;">{{ competence.niveau }}%</span>#}
+							{#</div>#}
+						{#</progress>#}
+					{#</li>#}
+				{#{% endfor %}#}
+			{#</ul>#}
+		{#</div>#}
+	{#{% endfor %}#}
+{#</div>#}

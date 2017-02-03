@@ -1,44 +1,48 @@
 {% trans_default_domain 'AppBundle' %}
 
 <div class="row">
-    <div class="col-xs-12">
-        <ul class="list-group">
-            <li class="list-group-item text-xs-center list-group-item-main">
-                <h1>{{ 'formation.title'|trans }}</h1>
-            </li>
-        </ul>
+<div class="card card-main">
+
+    <h5 class="card-header text-xs-center item-title">
+        {{ 'formation.title'|trans }}
+    </h5>
+
+    <div class="card-block">
+        {% for formation in formations %}
+
+            {% if loop.index is not divisible by(2) %}
+                <div class="row">
+            {% endif %}
+
+            <div class="col-sm-6">
+                <div class="card card-submain">
+                    <div class="card-header item-title">
+                        <h6>
+                            {{ formation.debut }} - {{ formation.fin }}
+                        </h6>
+                        <p class="card-text font-weight-bold">
+                            {{ formation.intitule|raw }}<br>
+                            {{ formation.ecole|raw }}
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% if formation.validation %}
+                        <li class="list-group-item">
+                            {{ formation.validation|raw }}
+                        </li>
+                        {% endif %}
+                        <li class="list-group-item">
+                            <b>Niveau</b>&nbsp;{{ formation.niveau|raw }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {% if loop.index is divisible by(2) %}
+                </div>
+            {% endif %}
+
+        {% endfor %}
     </div>
 </div>
-
-<div class="row">
-    {% for formation in formations %}
-        <div class="col-sm-6">
-
-            <ul class="list-group">
-
-                <li class="list-group-item text-xs-center list-group-item-title">
-                    <b>{{ formation.debut }}<br>{{ formation.fin }}</b>
-                </li>
-
-                <li class="list-group-item text-xs-center list-group-item-info">
-                    <b>{{ formation.intitule|raw }}</b>
-                </li>
-
-                <li class="list-group-item text-xs-center">
-                    {{ formation.ecole|raw }}
-                </li>
-
-                {% if formation.validation %}
-                <li class="list-group-item text-xs-center">
-                    {{ formation.validation|raw }}
-                </li>
-                {% endif %}
-
-                <li class="list-group-item text-xs-center">
-                    <b>Niveau</b>&nbsp;{{ formation.niveau|raw }}
-                </li>
-            </ul>
-
-        </div>
-    {% endfor %}
 </div>

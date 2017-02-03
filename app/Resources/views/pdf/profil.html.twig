@@ -1,27 +1,26 @@
 {% trans_default_domain 'AppBundle' %}
 
-<div class="row" id="profil">
-    <div class="col-sm-3">
-        <ul class="list-group">
-            <li class="list-group-item text-xs-center list-group-item-title">
-                <b>Profil</b>
-            </li>
-            <li class="list-group-item">
-                {% if profil is not null %}
-                    {{ profil.prenom }} {{ profil.nom }}<br>
-                    {{ profil.age }}<br>
-                    {{ profil.permis }}<br>
-                    {{ profil.statut }}
-                {% endif %}
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-offset-6 col-sm-3 text-xs-center">
+<div class="row" id="profil" style="margin-bottom: 6px;">
+    <div class="col-sm-2">
         <a href="{{ path('index') }}">
             <img class="img-thumbnail" id="logo"
                  src="{{ prefix }}{{ asset('bundles/app/img/logo.png') }}"
-                 style="width: 92px; height: 82px">
+                 style="width: 80px; height: 72px">
         </a>
+    </div>
+    <div class="col-sm-8">
+        <h2 class="text-xs-center" style="padding-top: 14px;">
+            Développeur Web
+        </h2>
+
+    </div>
+    <div class="col-sm-2 font-weight-bold" style="padding-top: 8px;">
+        {% if profil is not null %}
+            {{ profil.prenom }} {{ profil.nom }}<br>
+            {{ profil.age }}<br>
+            {{ profil.permis }}<br>
+            {{ profil.statut }}
+        {% endif %}
     </div>
 
 </div>

@@ -4,7 +4,7 @@
     "ecole":"<b><a target='_blank' href=\"http://imie-ecole-informatique.fr/formations/chef-de-projet-numerique.html\">IMIE Rennes</a></b>",
     "debut": "Septembre 2015",
     "fin": "Septembre 2016",
-    "intitule": "Chef de Projet Numérique",
+    "intitule": "Chef de Projet Conception Systèmes Informatiques",
     "validation": "Titre professionnel niveau I<br> <b>Chef de Projet en Conception de Systèmes Informatiques</b>",
     "niveau": "BAC +5"
   },
@@ -28,7 +28,7 @@
   },
   {
     "tag":"lycee",
-    "ecole":"<b>Lycée Colbert de Lorient</b>",
+    "ecole":"<b><a href=\"#\">Lycée Colbert de Lorient</a></b>",
     "debut": "Septembre 2004",
     "fin": "Août 2005",
     "intitule": "Baccalauréat Scientifique spécialité SI",

@@ -1,38 +1,44 @@
 {% trans_default_domain 'AppBundle' %}
 
+{% set nbColums = 3 %}
+
 <div class="row">
-    <div class="col-xs-12">
-        <ul class="list-group">
-            <li class="list-group-item text-xs-center list-group-item-main">
-                <h1>{{ 'experience.title'|trans }}</h1>
-            </li>
-        </ul>
+<div class="card card-main">
+
+    <h5 class="card-header text-xs-center item-title">
+       {{ 'experience.title'|trans }}
+    </h5>
+
+    <div class="card-block">
+    {% for experience in experiences %}
+
+        {% if (loop.index % nbColums == 1) %}
+            <div class="row">
+        {% endif %}
+
+        <div class="col-sm-{{ 12/nbColums }}">
+            <div class="card card-submain">
+                <div class="card-header item-title">
+                    <h6>
+                        {{ experience.debut }} - {{ experience.fin }}
+                    </h6>
+                    <p class="card-text font-weight-bold">
+                        {{ experience.poste }} - {{ experience.entreprise|raw }}
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for activite in experience.activites %}
+                    <li class="list-group-item">{{ activite.libelle|raw }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        {% if (loop.index % nbColums == 0) %}
+            </div>
+        {% endif %}
+
+    {% endfor %}
     </div>
 </div>
-
-<div class="row">
-    {% for experience in experiences %}
-    <div class="col-sm-6">
-        <ul class="list-group">
-
-            <li class="list-group-item text-xs-center list-group-item-title">
-                <b>{{ experience.debut }}<br>{{ experience.fin }}</b>
-            </li>
-
-            <li class="list-group-item text-xs-center list-group-item-info">
-                <b>{{ experience.poste }}</b>
-            </li>
-
-            <li class="list-group-item text-xs-center">
-                <b>{{ experience.entreprise|raw }}</b>
-            </li>
-
-            {% for activite in experience.activites %}
-                <li class="list-group-item">
-                    {{ activite.libelle|raw }}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endfor %}
 </div>
